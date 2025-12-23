@@ -1,0 +1,68 @@
+﻿body {
+	margin: 0px;
+}
+
+.header {
+	width: 100%;
+	height: 80px;
+	background-color: #4DA92D;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+}
+
+.header img {
+	float: left;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Tektur';
+	color: #4DA92D;
+}
+
+.login {
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	padding: 0 20px;
+	align-items: center;
+}
+
+.login div {
+	padding: 10px 0px;
+}
+
+.login label {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.login input {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px 10px;
+}
+
+.login .button {
+	padding: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: #4DA92D;
+	cursor: pointer;
+	border: 3px #4DA92D solid;
+	border-radius: 5px;
+}
+
+.login .button:hover {
+	color: #4DA92D;
+	background-color: white;
+}

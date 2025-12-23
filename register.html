@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/register.css">
+	<link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500&display=swap" rel="stylesheet">
+    <title>Регистрация</title>
+</head>
+<body>
+    <div class="header">
+		<img src="img\gerb.jpg" width=70px height=70px ALT="Герб Уфы" BORDER=0>
+	</div>
+    <h1>Регистрация</h1>
+    <form class="register" action="register.php" method="post">
+        <div>
+			<label>Login <span>*</span></label>
+            <input type="text" name="login" required>
+        </div>
+		<div>
+			<label>Email <span>*</span></label>
+            <input type="text" name="email" required>
+        </div>
+		<div>
+			<label>Phone number <span>*</span></label>
+            <input type="text" name="number" required>
+        </div>
+        <div>
+			<label>Password <span>*</span></label>
+            <input type="text" name="password" required>
+        </div>
+		<div>
+			<label>Confirm password <span>*</span></label>
+            <input type="text" name="confirm" required>
+        </div>
+        <a href="login.html">Войти</a>
+        <div>
+            <input class="button" type='submit' value='Зарегистрироваться'>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>
+			Ufa
+		</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500&display=swap" rel="stylesheet">
+		<link rel="manifest" href="manifest.json">
+		<script src="app.js"></script>
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    		<meta name="theme-color" content="#317EFB">
+	</head>
+	<body>
+	<div class="fon">
+		<h1>Столица Башкортостана — радушная и загадочная красавица,</h1>
+		<p>полная интересных особенностей, колоритных мест и многонациональных обычаев.</p>
+	</div>
+	<a name="honourable"><p id="text">Достопримечательности Уфы</p></a>
+	<div class="row">
+		<div class="block1">
+			<img src="img\honourable1.jpg" ALT="Памятник Салавату Юлаеву">
+			<a href="#honourable1">Памятник<br>Салавату Юлаеву</a>
+		</div>
+		<div class="block1">
+			<img src="img\honourable2.jpg" ALT="Мечеть Ляля-Тюльпан">
+			<a href="#honourable2">Мечеть<br>Ляля-Тюльпан</a>
+		</div>
+		<div class="block1">
+			<img src="img\honourable3.jpg" ALT="Центр города">
+			<a href="#honourable3">Центр города</a>
+		</div>
+		<div class="block1">
+			<img src="img\honourable4.jpg" ALT="Парк Победы">
+			<a href="#honourable4">Парк Победы</a>
+		</div>
+	</div>
+	<div class="coloumn">
+		<div class="block2">
+			<a name="honourable1"><img src="img\image1.png" ALT="Памятник Салавату Юлаеву"></a>
+			<div class="text">
+				<h1>Памятник Салавату Юлаеву</h1>
+				<p>Самый известный памятник города Уфы – это, безусловно,<br>памятник Салавату Юлаеву. Этот памятник<br>даже изображен на гербе республики Башкортостан.<br>
+				Он стал визитной карточкой Уфы и Башкирии.</p>
+			</div>
+		</div>
+		<div class="block2">
+			<div class="text">
+				<h1>Мечеть Ляля-Тюльпан</h1>
+				<p>Высота минаретов Ляля Тюльпан – 53 метра,<br>а их вершины в виде тюльпанов весят 34 тонны!<br>
+				Сегодня мечеть Ляля Тюльпан – главная кафедра<br>Верховного муфтия России Талгата Таджуддина<br>и Вторая Соборная мечеть Уфы.</p>
+			</div>
+			<a name="honourable2"><img src="img\image2.jpg" ALT="Мечеть Ляля-Тюльпан"></a>
+		</div>
+		<div class="block2">
+			<a name="honourable3"><img src="img\image3.jpg" ALT="Центр города"></a>
+			<div class="text">
+				<h1>Исторический центр города</h1>
+				<p>В данной части города много уникальных старинных<br>и красивых архитектурных объектов.<br>
+				Также это идеальное место для прогулок с семьёй:<br>много парков, кафе и ресторанов.</p>
+			</div>
+		</div>
+		<div class="block2">
+			<div class="text">
+				<h1>Парк Победы</h1>
+				<p>Парк Победы — мемориальный комплекс победы<br>в Великой Отечественной войне.<br>В парке представлена различная военная техника,<br>
+				есть мемориальные доски, памятники героям<br>и горит вечный огонь.</p>
+			</div>
+			<a name="honourable4"><img src="img\image4.jpg" ALT="Парк Победы"></a>
+		</div>
+	</div>
+	<form class="footer" autocomplete="off" action='feedback.php' method='post'>
+		<div class="feedback"> 
+			<div>
+				<label>Имя <span>*</span></label>
+				<input type='text' name='username' placeholder="Логин" required>
+			</div>
+			<div>
+				<label>Email <span>*</span></label>
+				<input type='text' name='email' placeholder="ivanov@mail.ru" required>
+			</div>
+			<div>
+				<label>Номер телефона (с кодом) <span>*</span></label>
+				<input type='text' name='number' placeholder="+7 - (_ _ _) - _ _ _ - _ _ - _ _" required>
+			</div>
+			<div>
+				<label>Сообщение</label>
+				<input type='text' name='message'>
+			</div>
+			<a name="feedback"><input class="button" type='submit' value='Отправить'></a>
+		</div>
+	</form>
+	<div class="header">
+		<img src="img\gerb.jpg" width=70px height=70px ALT="Герб Уфы" BORDER=0>
+		<a id="link1" href="#honourable">Достопримечательности</a>
+		<a id="link2" href="#feedback">Обратная связь</a>
+		<a id="link3" href="login.html">
+			<img src="img\login.png" width=70px height=70px ALT="Войти" BORDER=0>
+		</a>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PWA Авторизация: Исходный файл login.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">PWA Авторизация<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Система авторизации пользователей</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('login_8php_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">login.php</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="login_8php.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>&lt;?php<span class="comment"></span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @file login.php</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @brief Обработчик авторизации через POST запрос</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @details Проверяет логин и пароль пользователя в БД MySQL</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// Конфигурация подключения к базе данных</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="login_8php.html#ad79b54e31bd1050001133c4d70f850fe">    9</a></span><a class="code hl_variable" href="feedback_8php.html#ad79b54e31bd1050001133c4d70f850fe" title="Сервер MySQL.">$servername</a> = <span class="stringliteral">&quot;localhost&quot;</span>;  <span class="comment">///&lt; Сервер базы данных</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="login_8php.html#a0eb82aa5f81cf845de4b36cd653c42cf">   10</a></span><a class="code hl_variable" href="feedback_8php.html#a55e9d67380202bb65b35a5b525c4b82d" title="Пользователь БД">$username</a> = <span class="stringliteral">&quot;root&quot;</span>;         <span class="comment">///&lt; Имя пользователя MySQL</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="login_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d">   11</a></span><a class="code hl_variable" href="feedback_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d" title="Пароль БД">$password</a> = <span class="stringliteral">&quot;&quot;</span>;             <span class="comment">///&lt; Пароль пользователя MySQL</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="login_8php.html#abe4cef6111fbb533859307bdee37db95">   12</a></span><a class="code hl_variable" href="feedback_8php.html#abe4cef6111fbb533859307bdee37db95" title="Имя базы данных">$bdname</a> = <span class="stringliteral">&quot;UfaBD&quot;</span>;          <span class="comment">///&lt; Имя базы данных</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * @brief Устанавливает соединение с MySQL</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * @return mysqli|void Возвращает объект соединения или завершает скрипт</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="login_8php.html#aa8a5a87b9c1a6a0819b88447cbe41877">   18</a></span><a class="code hl_variable" href="feedback_8php.html#aa8a5a87b9c1a6a0819b88447cbe41877" title="Устанавливает соединение с MySQL.">$conn</a> = mysqli_connect(<a class="code hl_variable" href="feedback_8php.html#ad79b54e31bd1050001133c4d70f850fe" title="Сервер MySQL.">$servername</a>, <a class="code hl_variable" href="feedback_8php.html#a55e9d67380202bb65b35a5b525c4b82d" title="Пользователь БД">$username</a>, <a class="code hl_variable" href="feedback_8php.html#a607686ef9f99ea7c42f4f3dd3dbb2b0d" title="Пароль БД">$password</a>, <a class="code hl_variable" href="feedback_8php.html#abe4cef6111fbb533859307bdee37db95" title="Имя базы данных">$bdname</a>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordflow">if</span> (!<a class="code hl_variable" href="feedback_8php.html#aa8a5a87b9c1a6a0819b88447cbe41877" title="Устанавливает соединение с MySQL.">$conn</a>){</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    die(<span class="stringliteral">&quot;Connection failed&quot;</span>. mysqli_connect_error());</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"></span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * @brief Получает данные из POST запроса</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * @note Обрабатывает только POST метод</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="login_8php.html#ae96b17e9c79f1d069e9c149483a4fafe">   27</a></span><a class="code hl_variable" href="login_8php.html#ae96b17e9c79f1d069e9c149483a4fafe" title="Получает данные из POST запроса">$login</a> = $_POST[<span class="stringliteral">&#39;login&#39;</span>];    <span class="comment">///&lt; Логин из формы</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="login_8php.html#a12ec2780b52bd1c54d38c2f981c0349f">   28</a></span><a class="code hl_variable" href="login_8php.html#a12ec2780b52bd1c54d38c2f981c0349f" title="Пароль из формы">$pass</a> = $_POST[<span class="stringliteral">&#39;password&#39;</span>];  <span class="comment">///&lt; Пароль из формы</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"></span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * @brief SELECT запрос для проверки пользователя</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> * @details Ищет пользователя с указанным логином и паролем</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * @warning Уязвим к SQL-инъекциям</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="login_8php.html#a047170d6020a882807665812a27e2525">   35</a></span><a class="code hl_variable" href="feedback_8php.html#a047170d6020a882807665812a27e2525" title="INSERT запрос для сохранения данных">$sql</a> = <span class="stringliteral">&quot;SELECT * FROM `register` WHERE login = &#39;$login&#39; AND pass = &#39;$pass&#39;&quot;</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"></span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> * @brief Выполняет SQL запрос</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="login_8php.html#a112ef069ddc0454086e3d1e6d8d55d07">   40</a></span><a class="code hl_variable" href="login_8php.html#a112ef069ddc0454086e3d1e6d8d55d07" title="Выполняет SQL запрос">$result</a> = <a class="code hl_variable" href="feedback_8php.html#aa8a5a87b9c1a6a0819b88447cbe41877" title="Устанавливает соединение с MySQL.">$conn</a>-&gt;query(<a class="code hl_variable" href="feedback_8php.html#a047170d6020a882807665812a27e2525" title="INSERT запрос для сохранения данных">$sql</a>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"></span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> * @brief Обрабатывает результат SELECT запроса</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> * @details При успехе загружает главную страницу</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordflow">if</span> (<a class="code hl_variable" href="login_8php.html#a112ef069ddc0454086e3d1e6d8d55d07" title="Выполняет SQL запрос">$result</a>-&gt;num_rows &gt; 0){</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">while</span> ($row = <a class="code hl_variable" href="login_8php.html#a112ef069ddc0454086e3d1e6d8d55d07" title="Выполняет SQL запрос">$result</a>-&gt;fetch_assoc()){</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        $content = file_get_contents(<span class="stringliteral">&#39;index.html&#39;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        echo $content;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="login_8php.html#ad908b96d32f6275bf3ab9e93283a8588">   51</a></span>} <span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    echo <span class="stringliteral">&quot;Неправильно введён логин или пароль!&quot;</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>?&gt;</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="login_8php.html">login.php</a></li>
+    <li class="footer">Документация по PWA Авторизация. Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+.header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 80px;
+	background-color: #4DA92D;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+}
+
+.header img {
+	float: left;
+}
+
+body {
+	margin: 0px;
+}
+
+#link1, #link2 {
+	float: left;
+	padding: 30px 10px;
+	font-size: 1.5vw;
+	font-family: 'Tektur';
+	color: white;
+	text-decoration: none;
+}
+
+#link1:hover, #link2:hover {
+	color: blue;
+	text-decoration: none;
+}
+
+#link3 {
+	float: right;
+}
+
+.fon {
+	margin-top: 68px;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/ufa1.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+}
+
+.fon h1{
+	padding-top: 20px;
+	margin-bottom: 0px;
+	text-align: center;
+	font-size: 2.8vw;
+	font-family: 'Tektur';
+	color: white;
+}
+
+.fon p{
+	text-align: center;
+	margin-top: 10px;
+	font-size: 2vw;
+	font-family: 'Tektur';
+	color: white;
+}
+
+#text {
+	margin-top: 25px;
+	font-size: 2vw;
+	font-family: 'Tektur';
+	font-weight: bold;
+	color: #4DA92D;
+	text-align: center;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.block1 {
+	width: 20%;
+	height: auto;
+	flex-shrink: 1;
+	background-color: #4DA92D;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+}
+
+.block1 img {
+	width: 100%;
+	height: auto;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+.block1 a {
+	float: left;
+	padding: 10px 20px;
+	font-size: 1.5vw;
+	font-family: 'Tektur';
+	color: white;
+	text-decoration: none;
+}
+
+.block1 a:hover{
+	color: blue;
+	text-decoration: none;
+}
+
+.block2 {
+	flex-shrink: 1;
+	margin: 50px 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.block2 img {
+	float: left;
+	width: 100%;
+	height: auto;
+	flex-shrink: 1;
+	border-top-left-radius: 10em;
+	border-top-right-radius: 10em;
+	border-bottom-left-radius: 10em;
+	border-bottom-right-radius: 10em;
+}
+
+.text {
+	flex-shrink: 1;
+	float: left;
+	width: 100%;
+	padding-right: 100px;
+	padding-left: 100px;
+}
+
+.text h1 {
+	flex-shrink: 1;
+	font-size: 2vw;
+	font-family: 'Tektur';
+	color: #4DA92D;
+	text-align: center;
+}
+
+.text p {
+	flex-shrink: 1;
+	font-size: 1.5vw;
+	font-family: 'Tektur';
+	text-align: center;
+}
+
+.footer {
+	width: 100%;
+	margin-top: 100px;
+	margin-bottom: 0px;
+	background-color: #ced8e6;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+.feedback {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.feedback div {
+	padding: 10px 0px;
+}
+
+.feedback label {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.feedback input {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px 10px;
+}
+
+.feedback label span {
+	color: red;
+}
+
+.feedback .button {
+	padding: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: #4DA92D;
+	cursor: pointer;
+	border: 3px #4DA92D solid;
+	border-radius: 5px;
+}
+
+.feedback .button:hover {
+	color: #4DA92D;
+	background-color: white;
+}
